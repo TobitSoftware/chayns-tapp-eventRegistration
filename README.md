@@ -4,3 +4,9 @@ This example of a reservation Tapp provides your customers with the possibility 
 Attendees can be checked in by scanning either their QR code or OPM transpondercard connected to their chayns® account.
 
 It is splitted into a frontend folder and a backend folder that..
+
+### Requirements
+To use this example, you need to fullfill following requirements
+* Member of the Tobit Software Parnter Network ( TSPN )
+* Microsoft Visual Studio
+* Android Device for NFC scan
