@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Add Meta-Tags for scaling etc.-->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1, maximum-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8">
+
+    <title>Tapp</title>
+
+    <!--Load the chayns styles-->
+    <link rel="stylesheet" href="https://chayns-res.tobit.com/API/v3.1/css/chayns.min.css">
+
+<style>
+    .hidden {
+        display: none;
+    }
+    
+    .clock:before {
+        content: '\f017';
+    }
+
+    .map-marker:before {
+        content: '\f041';
+        padding: 0 2px;
+    }
+    
+    .checkin-wrapper.success{
+        background-color: rgba(50, 205, 50, 0.6) !important;
+    }
+
+    .checkin-wrapper.failure{
+        background-color: rgba(154, 2, 0, 0.6) !important;
+    }
+</style>
+
+
+
+</head>
+<body chayns-cloak>
+<div class="tapp hidden">
+    <div class="view__user">
+        <div class="tapp__intro">
+            <img width="100%"
+                 src="//chayns-res.tobit.com/API/v3.1/docs/Sample/late_night_shopping_2016.jpg">
+            <h1 style="margin-top: 10px;">Late Night Shopping</h1>
+            <p>
+                Wir laden herzlichst zum diesjährigen Late Night Shopping 2016 ein. Was könnte schöner sein, als
+                gemeinsam mit uns und einer breiten Auswahl aus der neuesten Kollektion von Sean McGregor in den Mai zu
+                tanzen. Bei einem kühlen Glas Champagner und einem gepfefferten Rabatt von sage und schreibe 35% auf den
+                gesamten Einkauf! Das gesamte Team vom Marks Fashion Store freut sich auf Ihren Besuch. Bitte
+                registrieren Sie sich über den Button "Jetzt Registrieren" in unserer Smartphone App, damit wir Ihnen
+                ein Ticket zu diesem ganz besonderen Event sichern dürfen. Der Eintritt erfolgt an diesem Abend ganz
+                exklusiv und nur für registrierte Kunden unseres Hauses.
+            </p>
+            <div>
+                <div><i class="icon clock"></i> Sonntag, 1. Mai 2016, 18:00 Uhr - 23:59 Uhr</div>
+                <div><i class="icon map-marker"></i><a
+                        onclick="chayns.openUrlInBrowser('https://www.google.de/maps/search/+Parallelstra%C3%9Fe+41+48683');">
+                    Parallelstraße 41, 48683 Ahaus</a></div>
+            </div>
+        </div>
+
+        <div class="tapp__content is-dark registerContainer hidden">
+            <h2>An Veranstaltung teilnehmen</h2>
+            <div style="margin-bottom: 10px;">
+                Durch das klicken auf "Jetzt Teilnehmen" melden Sie sich verbindlich zum Late Night Shopping 2016 an.
+            </div>
+            <div style='text-align: center'>
+                <button class='button register'>Jetzt Teilnehmen</button>
+            </div>
+        </div>
+
+        <div class="tapp__content is-dark registeredContainer hidden">
+            <h2>Wir freuen uns auf Sie!</h2>
+            <p>Sie haben einen Platz bei unserem Late Night Shopping 2016 schon sicher. Bringen Sie zur Veranstaltung bitte zum Einchecken Ihr Smartphone oder Ihre Kundenkarte mit.</p>
+        </div>
+
+        <div class="tapp__content is-dark soldOutContainer hidden">
+            <h2>Das Event ist Ausgebucht.</h2>
+            <p>Es sind leider keine Plätze mehr frei, aber kommen Sie doch einfach ein anderes Mal zu uns.</p>
+        </div>
+    </div>
+
+    <div class="view__checkin hidden">
+        <div class="tapp__intro">
+            <h1 style="margin-top: 10px;">CheckIn: Late Night Shopping</h1>
+            <ul class='list list--square'>
+                <li>Das CheckIn beginnt um 18:00 Uhr.</li>
+                <li>Die Teilnahme am Event ist mit der Reservierung kostenlos.</li>
+                <li>Die Teilnahme ohne Reservierung ist nicht möglich.</li>
+            </ul>
+        </div>
+
+        <div class="tapp__content is-dark checkin-wrapper">
+            <h2>Check-In</h2>
+            <div style="margin-bottom: 10px;">
+                Einchecken ist per Kundenkarte oder mit dem QR-Code im Kundenbereich der Smartphone App möglich.
+            </div>
+            <div style='text-align: center' data-equalize='buttons'>
+                <button class='button rfid' data-equalize-width='buttons'>Kundenkarte</button>
+                <button class='button qr' style="margin-left:10px;" data-equalize-width='buttons'>QR-Code</button>
+            </div>
+        </div>
+
+        <div class="tapp__content is-dark chaynsweb-wrapper hidden">
+            <h2>Check-In</h2>
+            <div style="margin-bottom: 10px;">
+                Zum Einchecken lade Dir bitte die App für dein Smartphone herunter.
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--Load the js chayns API-->
+<script src="https://chayns-res.tobit.com/API/v3.1/js/chayns.min.js"></script>
+<script src="./src/event.js"></script>
+<script src="./src/app.js"></script>
+
+</body>
+</html>
