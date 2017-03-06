@@ -1,13 +1,30 @@
-## TicketSystem Frontend
+npm # chayns-tapp-eventRegistration
 
-Sample to Campus Days 04.16 workshop: "Software frisst die tleW!"
+Here you can find some instructions for setting up your projects properly and publishing the results
 
-### TODO    
--   change the server url in src/event.js
-    ```
-    function getServerUrl(controller) {
-        return 'MyProjectPath/' + chayns.env.site.locationId + '/' + controller + '/' + chayns.env.site.tapp.id;
-    }
-    ```
--   change the content for your event
+## Getting started
 
+The project is based on several npm-Packages, which have to be installed first. If you haven´t installed `node.js` already, please install it now.
+For installing the dependencies you have to open your `node.js` terminal, change the path to the this project and run:
+
+```
+npm i
+```
+
+For setting up the recommended folder structure you just have to run:
+
+```
+npm run setup
+```
+
+This project uses `webpack` and `Babel` for building and debugging. You can start the `webpack-dev-server` with the following statement:
+
+```
+npm start
+```
+
+For creating an production build execute this code:
+
+```
+npm run release
+```

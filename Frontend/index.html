@@ -2,123 +2,135 @@
 <html>
 <head>
     <!--Add Meta-Tags for scaling etc.-->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1, maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1, maximum-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta charset="utf-8">
 
     <title>Tapp</title>
 
     <!--Load the chayns styles-->
-    <link rel="stylesheet" href="https://chayns-res.tobit.com/API/v3.1/css/chayns.min.css">
+    <link rel="stylesheet" href="//chayns-res.tobit.com/API/V3.1/css/chayns.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
 
-<style>
-    .hidden {
-        display: none;
-    }
-    
-    .clock:before {
-        content: '\f017';
-    }
+        #mobileContainer {
+            margin-top: 10px;
+        }
 
-    .map-marker:before {
-        content: '\f041';
-        padding: 0 2px;
-    }
-    
-    .checkin-wrapper.success{
-        background-color: rgba(50, 205, 50, 0.6) !important;
-    }
+        .checkinBtn {
+            width: 100px;
+        }
 
-    .checkin-wrapper.failure{
-        background-color: rgba(154, 2, 0, 0.6) !important;
-    }
-</style>
-
-
-
+        #mobileCheckIn {
+            text-align: center;
+        }
+    </style>
 </head>
-<body chayns-cloak>
-<div class="tapp hidden">
-    <div class="view__user">
-        <div class="tapp__intro">
-            <img width="100%"
-                 src="//chayns-res.tobit.com/API/v3.1/docs/Sample/late_night_shopping_2016.jpg">
-            <h1 style="margin-top: 10px;">Late Night Shopping</h1>
-            <p>
-                Wir laden herzlichst zum diesjährigen Late Night Shopping 2016 ein. Was könnte schöner sein, als
-                gemeinsam mit uns und einer breiten Auswahl aus der neuesten Kollektion von Sean McGregor in den Mai zu
-                tanzen. Bei einem kühlen Glas Champagner und einem gepfefferten Rabatt von sage und schreibe 35% auf den
-                gesamten Einkauf! Das gesamte Team vom Marks Fashion Store freut sich auf Ihren Besuch. Bitte
-                registrieren Sie sich über den Button "Jetzt Registrieren" in unserer Smartphone App, damit wir Ihnen
-                ein Ticket zu diesem ganz besonderen Event sichern dürfen. Der Eintritt erfolgt an diesem Abend ganz
-                exklusiv und nur für registrierte Kunden unseres Hauses.
-            </p>
-            <div>
-                <div><i class="icon clock"></i> Sonntag, 1. Mai 2016, 18:00 Uhr - 23:59 Uhr</div>
-                <div><i class="icon map-marker"></i><a
-                        onclick="chayns.openUrlInBrowser('https://www.google.de/maps/search/+Parallelstra%C3%9Fe+41+48683');">
-                    Parallelstraße 41, 48683 Ahaus</a></div>
+<body>
+    <div class="tapp">
+        <div id="userView">
+            <!-- As the following class intends, this is the tapp intro containing a teaser image and a description -->
+            <div class="tapp__intro">
+                <div style="width: 100%; height: 200px; background-size: contain; background-image: url('https://images.tobit.com/Locations/2/facebook/eventimages/1561384583889058_1558867057475055_n.jpg')"></div>
+                <h1 id="headline" style="margin-top: 10px;">7th Tobit.Campus Days</h1>
+                <div>
+                    <p>
+                        Since 2014, they have been a fixture in the annual calendar: The Ahauser Campus Days.
+                        The "place to be" for all who want to know more.
+                        Thousands of attendees, the best speakers in the country and lots of practical knowledge, the 7th edition of the 22nd - March has everything in the luggage.
+                        The focus of Campus Days is probably the most recent and most important.
+                    </p>
+                    <p>
+                        The digital revolution is changing the world, at a speed that leaves many astonished.
+                        The Ahaus Campus Days are the reason for this revolution.
+                        The best coaches and trainers in the country cover what is behind the digitization, give courage and give valuable tips for their own, digital way.
+                        The workshops with many practical examples help to understand which building blocks are important and how they can be used profitably for themselves and their company.
+                    </p>
+                    <p>
+                        The all-inclusive tickets include, in addition to the access to the different sessions, all the conference drinks, snacks and a nice participant package.
+                        They are available for a short time at the early bird price of 29 euros for the day ticket and 79 euros for the entire event.
+                    </p>
+                    <div>
+                        <span style="width: 100%;">Time <span style="float: right;">March 22, 2017 - 10:00 AM - March 24, 2017 - 06:00 PM</span></span><br>
+                        <span style="width: 100%;">Location <span style="float: right;">Tobit.Campus, 48683 Ahaus, Germany</span></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- these are the different states for a user. Either they aren't signed in, signed in, checked in or the event cant take mroe users. -->
+            <div class="tapp__content">
+                <div id="takePart" class="content__card hidden">
+                    <h2>Take part</h2>
+                    <p>Sign up for the event, so you can check in on start</p>
+                    <div style="width:100%; text-align: center;">
+                        <button id="signUpBtn" class="button">Take part</button>
+                    </div>
+                </div>
+                <div id="assigned" class="content__card hidden">
+                    <h2>Thank You</h2>
+                    <p>You have registered for the event</p>
+                </div>
+                <div id="checkedIn" class="content__card hidden">
+                    <h2>Have fun!</h2>
+                    <p>You were checked in successfully</p>
+                </div>
+                <!-- for future purposes ( e.g. hardcoded max ticket amount in the backend ) -->
+                <div id="soldOut" class="content__card hidden">
+                    <h2>We are sorry</h2>
+                    <p>There are no more tickets left</p>
+                </div>
             </div>
         </div>
 
-        <div class="tapp__content is-dark registerContainer hidden">
-            <h2>An Veranstaltung teilnehmen</h2>
-            <div style="margin-bottom: 10px;">
-                Durch das klicken auf "Jetzt Teilnehmen" melden Sie sich verbindlich zum Late Night Shopping 2016 an.
+        <div id="checkinView" class="hidden">
+            <div class="tapp__intro">
+                <h1>Movie Night</h1>
+                <div>
+                    <p>
+                        With the checkIn view you can select users manually to check them in.<br>
+                        Once checked in, they cant re-enter the event.
+                    </p>
+                    <ol style="margin-left: 15px">
+                        <li>The CheckIn starts at 10 AM</li>
+                        <li>Taking part without a ticket is not allowed</li>
+                    </ol>
+                </div>
             </div>
-            <div style='text-align: center'>
-                <button class='button register'>Jetzt Teilnehmen</button>
+
+            <div class="tapp__content">
+
+                <!-- this content card is designed for future features ( checkIn via qr code and rfid cards ) -->
+                <div id="mobileContainer" class="content__card hidden">
+                    <h2>CheckIn</h2>
+                    <div id="mobileCheckIn" class="hidden">
+                        <div data-equalize='buttons'>
+                            <button id="qr" data-equalize-width='buttons' class='button checkinBtn'>QR</button>
+                            <button id=rfid" data-equalize-width='buttons' class='button checkinBtn'>RFID</button>
+                        </div>
+                    </div>
+                    <div id="noApp">
+                        Download the app for more checkIn options
+                    </div>
+                </div>
+
+                <div id="signedInUsers" class="accordion hidden">
+                    <div class="accordion__head">
+                        CheckIn Users
+                    </div>
+                    <div class="accordion__body">
+                        <div id="signedInUsersList" class="accordion__content">
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="tapp__content is-dark registeredContainer hidden">
-            <h2>Wir freuen uns auf Sie!</h2>
-            <p>Sie haben einen Platz bei unserem Late Night Shopping 2016 schon sicher. Bringen Sie zur Veranstaltung bitte zum Einchecken Ihr Smartphone oder Ihre Kundenkarte mit.</p>
-        </div>
-
-        <div class="tapp__content is-dark soldOutContainer hidden">
-            <h2>Das Event ist Ausgebucht.</h2>
-            <p>Es sind leider keine Plätze mehr frei, aber kommen Sie doch einfach ein anderes Mal zu uns.</p>
         </div>
     </div>
 
-    <div class="view__checkin hidden">
-        <div class="tapp__intro">
-            <h1 style="margin-top: 10px;">CheckIn: Late Night Shopping</h1>
-            <ul class='list list--square'>
-                <li>Das CheckIn beginnt um 18:00 Uhr.</li>
-                <li>Die Teilnahme am Event ist mit der Reservierung kostenlos.</li>
-                <li>Die Teilnahme ohne Reservierung ist nicht möglich.</li>
-            </ul>
-        </div>
-
-        <div class="tapp__content is-dark checkin-wrapper">
-            <h2>Check-In</h2>
-            <div style="margin-bottom: 10px;">
-                Einchecken ist per Kundenkarte oder mit dem QR-Code im Kundenbereich der Smartphone App möglich.
-            </div>
-            <div style='text-align: center' data-equalize='buttons'>
-                <button class='button rfid' data-equalize-width='buttons'>Kundenkarte</button>
-                <button class='button qr' style="margin-left:10px;" data-equalize-width='buttons'>QR-Code</button>
-            </div>
-        </div>
-
-        <div class="tapp__content is-dark chaynsweb-wrapper hidden">
-            <h2>Check-In</h2>
-            <div style="margin-bottom: 10px;">
-                Zum Einchecken lade Dir bitte die App für dein Smartphone herunter.
-            </div>
-        </div>
-    </div>
-
-
-</div>
-
-<!--Load the js chayns API-->
-<script src="https://chayns-res.tobit.com/API/v3.1/js/chayns.min.js"></script>
-<script src="./src/event.js"></script>
-<script src="./src/app.js"></script>
-
+    <!--Load the js chayns API-->
+    <script src="//chayns-res.tobit.com/API/V3.1/js/chayns.min.js"></script>
 </body>
 </html>

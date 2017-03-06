@@ -1,0 +1,31 @@
+{
+  "name": "EventRegistration",
+  "version": "1.0.0",
+  "description": "Sample frontend project for the chayns event registration using the chayns backing api.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --colors --progress --config ./webpack/dev.babel.js --host 0.0.0.0 --port 8080",
+    "release": "webpack --colors --progress --config ./webpack/prod.babel.js",
+    "setup": "mkdirp ./src/utils && mkdirp ./src/components/admin_view && mkdirp ./src/components/user_view"
+  },
+  "keywords": [
+    "chayns",
+    "chayns-templates",
+    "es2015",
+    "es6",
+    "webpack",
+    "tobit"
+  ],
+  "author": "Benedikt Schulze Baek",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "html-webpack-plugin": "^2.26.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-replace": "^1.0.0"
+  }
+}
