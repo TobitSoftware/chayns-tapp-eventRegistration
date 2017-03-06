@@ -60,8 +60,9 @@ namespace EventRegistration.Properties {
             }
         }
         
+        //Replace this with your tapp secret
         /// <summary>
-        ///   Looks up a localized string similar to e1169b89-066d-4ce7-aa13-a8aa73473d5b.
+        ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string Secret {
             get {
