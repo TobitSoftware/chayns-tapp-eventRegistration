@@ -1,6 +1,4 @@
-npm # chayns-tapp-eventRegistration
-
-Here you can find some instructions for setting up your projects properly and publishing the results
+Here you can find some instructions for setting up your project properly and publishing the results
 
 ## Getting started
 
