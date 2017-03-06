@@ -9,7 +9,8 @@ It is splitted into a frontend folder and a backend folder that contain the diff
 
 ### Requirements
 To use this example, you need to fullfill following requirements
-* Member of the Tobit Software Parnter Network (TSPN)
 * Microsoft Visual Studio (backend project)
 * Microsoft Visual Code (frontend project)
 * NodeJS (for webpack)
+* Member of the Tobit Software Parnter Network (TSPN)
+  * This means that you have to register this tapp as a developer tapp and put the secret into your backend project properties. Install the tapp by using the install code in the tapp administration provided in the tspn.
