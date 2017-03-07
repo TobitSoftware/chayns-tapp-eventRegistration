@@ -4,7 +4,7 @@ export default class request_module {
      * Usually the requests just get performed and then return the response to the caller function as a resolved promise.
      */
     constructor() {
-        this.url = "http://w-st.tobit.ag/EventRegistration.Api"
+        this.url = "Path/To/EventRegistration.Api"
     }
 
     /**
