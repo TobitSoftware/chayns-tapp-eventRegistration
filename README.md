@@ -1,3 +1,5 @@
+[![license](https://img.shields.io/github/license/TobitSoftware/chayns-tapp-eventRegistration.svg)]() [![GitHub pull requests](https://img.shields.io/github/issues-pr/TobitSoftware/chayns-tapp-eventRegistration.svg)]() [![](https://img.shields.io/github/issues-pr-closed-raw/TobitSoftware/chayns-tapp-eventRegistration.svg)]()
+
 # Event Registration
 
 This example of a reservation Tapp provides your customers with the possibility to sign up for an event. The design is similar to the event Tapp with the addition of a register button that is used for the sign-in. Furthermore, the Tapp makes use of user account control groups (UAC-groups), to track the attendees of an event and check them in (everybody is allowed to checkin).<br>
